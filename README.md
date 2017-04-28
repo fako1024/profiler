@@ -71,7 +71,7 @@ func customMiddleware(next http.Handler) http.Handler {
 func main() {
 
 	profiler.New(
-    profiler.WithAddr("127.0.0.1:6061"),                  // Start web interface on port 6061
+		profiler.WithAddr("127.0.0.1:6061"),                  // Start web interface on port 6061
 		profiler.WithKeyPair("/tmp/tls.crt", "/tmp/tls.key"), // Enable HTTPS (certificate / key)
 		profiler.WithMiddleware(customMiddleware),            // Enable request logging to STDOUT
 		profiler.WithHTMLTemplate(customTemplate),            // Set custom HTML index page template
